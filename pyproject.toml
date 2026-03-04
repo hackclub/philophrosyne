@@ -8,6 +8,7 @@ dependencies = [
     "aiohttp>=3.11.14",
     "apscheduler>=3.11.1",
     "blockkit>=2.1.2",
+    "loguru>=0.7.3",
     "piccolo[all]>=1.30.0",
     "pydantic>=2.12.4",
     "pydantic-settings>=2.11.0",
