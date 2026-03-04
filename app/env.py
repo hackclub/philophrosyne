@@ -1,5 +1,4 @@
 import contextlib
-import logging
 from time import time
 
 from aiohttp import ClientSession
@@ -16,8 +15,7 @@ from app.tasks import register_tasks
 from app.utils.logging import send_heartbeat
 from app.views import register_views
 
-logger = logging.getLogger(__name__)
-
+from loguru import logger
 
 class Environment:
     slack_client: AsyncWebClient
@@ -36,7 +34,7 @@ class Environment:
         handler = None
         if config.slack.app_token:
             if config.environment == "production":
-                logging.warning(
+                logger.warning(
                     "You are currently running Socket mode in production. This is NOT RECOMMENDED - you should set up a proper HTTP server with a request URL."
                 )
             from slack_bolt.adapter.socket_mode.async_handler import (

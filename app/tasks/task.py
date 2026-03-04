@@ -1,5 +1,4 @@
-import logging
-
+from loguru import logger
 
 async def task():
-    logging.info("Hi, i'm a task :3")
+    logger.info("Hi, i'm a task :3")
