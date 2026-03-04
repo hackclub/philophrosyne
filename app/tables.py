@@ -4,3 +4,11 @@
 # class Person(Table):
 #     slack_id = Varchar(length=20, index=True)
 #     age = Integer()
+from piccolo.table import Table
+from piccolo.columns import Text, Integer, Timestamptz, Varchar, UUID
+
+class RaffleTickets(Table):
+    ticket_id = UUID(primary_key=True)
+    owner_slack_id = Varchar(length=20, null=False)
+    ticket_kind = Text(null=False)
+    claim_timestamp = Timestamptz(null=False)
